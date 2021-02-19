@@ -1,0 +1,12 @@
+{
+  "commit": {
+    "commit": "7eaf9a63473d5a277a72a02ea7899ee2d7da52ea",
+    "author": "Scott Chamberlain <sckott@fastmail.com>",
+    "time": "2021-02-19 19:01:53",
+    "files": 45,
+    "merge": false,
+    "message": "fix #862 remove my email from man files; further encourage no emails in contributing.md\n"
+  },
+  "remote": "https://github.com/ropensci/taxize",
+  "pkg": "taxize"
+}
