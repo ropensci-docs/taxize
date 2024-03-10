@@ -1,0 +1,12 @@
+{
+  "commit": {
+    "commit": "2a6937458dbd96ec187e8b4500cc4ddf975f3e22",
+    "author": "Zachary S.L. Foster <zacharyfoster1989@gmail.com>",
+    "time": "2024-01-09 23:58:49",
+    "files": 1,
+    "merge": false,
+    "message": "tagging version for github actions\n\nissue #924\n"
+  },
+  "repo": "https://github.com/ropensci/taxize",
+  "pkg": "taxize"
+}

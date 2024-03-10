@@ -1,0 +1,15 @@
+pandoc: 2.16.2
+pkgdown: 2.0.7
+pkgdown_sha: ~
+articles:
+  case_study: case_study.html
+  datasources: datasources.html
+  infotable: infotable.html
+  name_cleaning: name_cleaning.html
+  taxize: taxize.html
+  taxonomic_ranks: taxonomic_ranks.html
+last_built: 2024-03-10T04:54Z
+urls:
+  reference: https://docs.ropensci.org/taxize/reference
+  article: https://docs.ropensci.org/taxize/articles
+
