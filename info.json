@@ -1,0 +1,13 @@
+{
+  "commit": {
+    "commit": "1ce59e9abd844100343dd342b196db1f2a216299",
+    "author": "Zachary Foster <zacharyfoster1989@gmail.com>",
+    "time": "2026-05-12T18:27:30Z",
+    "files": 1,
+    "merge": true,
+    "message": "Merge pull request #956 from abfleishman/patch-1\n\nFix typo in taxize.Rmd documentation"
+  },
+  "repo": "https://github.com/ropensci/taxize",
+  "pkg": "taxize",
+  "time": "2026-08-30T07:28:21Z"
+}

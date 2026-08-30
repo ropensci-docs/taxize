@@ -1,0 +1,545 @@
+# taxize
+
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![rworkflows](https://github.com/ropensci/taxize/workflows/rworkflows/badge.svg)](https://github.com/ropensci/taxize/actions/)
+[![codecov](https://codecov.io/gh/ropensci/taxize/branch/master/graph/badge.svg)](https://app.codecov.io/gh/ropensci/taxize)
+[![rstudio mirror
+downloads](https://cranlogs.r-pkg.org/badges/taxize)](https://github.com/r-hub/cranlogs.app)
+[![cran
+version](https://www.r-pkg.org/badges/version/taxize)](https://cran.r-project.org/package=taxize)
+
+`taxize` allows users to search over many taxonomic data sources for
+species names (scientific and common) and download up and downstream
+taxonomic hierarchical information - among other things.
+
+Package documentation: <https://docs.ropensci.org/taxize/>
+
+## Installation
+
+### Stable version from CRAN
+
+``` r
+
+install.packages("taxize")
+```
+
+### Development version from GitHub
+
+Windows users install Rtools first.
+
+``` r
+
+install.packages("remotes")
+remotes::install_github("ropensci/taxize")
+```
+
+``` r
+
+library('taxize')
+```
+
+## Screencast
+
+[![](reference/figures/screencast.png)](https://vimeo.com/92883063)
+
+## Contributing
+
+See our
+[CONTRIBUTING](https://github.com/ropensci/taxize/blob/master/.github/CONTRIBUTING.md)
+document.
+
+## Contributors
+
+Collected via GitHub Issues: honors all contributors in alphabetical
+order. Code contributors are in bold.
+
+afkoeppel - ahhurlbert - albnd - Alectoria - andzandz11 - **anirvan** -
+antagomir - **arendsee** - ArielGreiner - arw36 - ashenkin -
+**ashiklom** - benjaminschwetz - **benmarwick** - bienflorencia -
+binkySallly - bomeara - BridgettCollis - bw4sz - **cboettig** -
+cdeterman - ChrKoenig - chuckrp - clarson2191 - claudenozeres -
+cmzambranat - cparsania - daattali - DanielGMead - DarrenObbard -
+davharris - davidvilanova - diogoprov - **dlebauer** - dlenz1 -
+dougwyu - dschlaep - **EDiLD** - edwbaker - emhart - eregenyi -
+fdschneider - fgabriel1891 - fischhoff - **fmichonneau** - **fozy81** -
+**gedankenstuecke** - gimoya - git-og - glaroc - **gpli** - gustavobio -
+hlapp - **ibartomeus** - **Ironholds** - jabard89 - jangorecki -
+**jarioksa** - jebyrnes - **jeroen** - **jimmyodonnell** - joelnitta -
+johnbaums - jonmcalder - jordancasey - **josephwb** - jsgosnell -
+JulietteLgls - **jwilk** - kamapu - **karthik** - **katrinleinweber** -
+KevCaz - kgturner - kmeverson - Koalha - **ljvillanueva** - **maelle** -
+Markus2015 - matutosi - mcsiple - MikkoVihtakari - millerjef -
+miriamgrace - mpnelsen - MUSEZOOLVERT - nate-d-olson - nmatzke - npch -
+ocstringham - p-neves - p-schaefer - padpadpadpad - paternogbc -
+**patperu** - pederengelstad - philippi - Phylloxera - **pmarchand1** -
+pozsgaig - pssguy - **raredd** - rec3141 - **Rekyt** - RodgerG -
+rossmounce - sariya - sastoudt - scelmendorf - **sckott** -
+SimonGoring - snsheth - snubian - Squiercg - sunray1 - **taddallas** -
+tdjames1 - tmkurobe - toczydlowski - tpaulson1 - tpoisot -
+**TrashBirdEcology** - **trvinh** - **vijaybarve** - wcornwell -
+willpearse - wpetry - yhg926 - **zachary-foster**
+
+## Road map
+
+Check out our
+[milestones](https://github.com/ropensci/taxize/milestones) to see what
+we plan to get done for each version.
+
+## Meta
+
+- Please [report any issues or
+  bugs](https://github.com/ropensci/taxize/issues).
+- License: MIT
+- Get citation information for `taxize` in R doing
+  `citation(package = 'taxize')`
+- Please note that this package is released with a [Contributor Code of
+  Conduct](https://ropensci.org/code-of-conduct/). By contributing to
+  this project, you agree to abide by its terms.
+
+# Package index
+
+## taxize
+
+- [`taxize-package`](https://docs.ropensci.org/taxize/reference/taxize-package.md)
+  [`taxize`](https://docs.ropensci.org/taxize/reference/taxize-package.md)
+  : Taxonomic Information from Around the Web
+- [`taxize-defunct`](https://docs.ropensci.org/taxize/reference/taxize-defunct.md)
+  [`defunct`](https://docs.ropensci.org/taxize/reference/taxize-defunct.md)
+  : Defunct functions in taxize
+- [`taxize_cite()`](https://docs.ropensci.org/taxize/reference/taxize_cite.md)
+  : Get citations and licenses for data sources used in taxize
+- [`taxize-params`](https://docs.ropensci.org/taxize/reference/taxize-params.md)
+  : taxize parameters
+- [`taxize_options()`](https://docs.ropensci.org/taxize/reference/taxize_options.md)
+  : taxize options
+
+## Authentication
+
+- [`taxize-authentication`](https://docs.ropensci.org/taxize/reference/taxize-authentication.md)
+  [`authentication`](https://docs.ropensci.org/taxize/reference/taxize-authentication.md)
+  : taxize authentication
+- [`getkey()`](https://docs.ropensci.org/taxize/reference/getkey.md) :
+  Function to get API key.
+- [`use_tropicos()`](https://docs.ropensci.org/taxize/reference/key_helpers.md)
+  [`use_entrez()`](https://docs.ropensci.org/taxize/reference/key_helpers.md)
+  [`use_iucn()`](https://docs.ropensci.org/taxize/reference/key_helpers.md)
+  : Helpers to set up authentication for the different providers.
+
+## High level functions
+
+Functions that work across sources
+
+- [`children()`](https://docs.ropensci.org/taxize/reference/children.md)
+  : Retrieve immediate children taxa for a given taxon name or ID.
+- [`classification()`](https://docs.ropensci.org/taxize/reference/classification.md)
+  [`cbind(`*`<classification>`*`)`](https://docs.ropensci.org/taxize/reference/classification.md)
+  [`rbind(`*`<classification>`*`)`](https://docs.ropensci.org/taxize/reference/classification.md)
+  [`cbind(`*`<classification_ids>`*`)`](https://docs.ropensci.org/taxize/reference/classification.md)
+  [`rbind(`*`<classification_ids>`*`)`](https://docs.ropensci.org/taxize/reference/classification.md)
+  : Retrieve the taxonomic hierarchy for a given taxon ID.
+- [`downstream()`](https://docs.ropensci.org/taxize/reference/downstream.md)
+  : Retrieve the downstream taxa for a given taxon name or ID.
+- [`upstream()`](https://docs.ropensci.org/taxize/reference/upstream.md)
+  : Retrieve the upstream taxa for a given taxon name or ID.
+- [`comm2sci()`](https://docs.ropensci.org/taxize/reference/comm2sci.md)
+  : Get scientific names from common names.
+- [`sci2comm()`](https://docs.ropensci.org/taxize/reference/sci2comm.md)
+  : Get common names from scientific names.
+- [`id2name()`](https://docs.ropensci.org/taxize/reference/id2name.md) :
+  Taxonomic IDs to taxonomic names
+- [`lowest_common()`](https://docs.ropensci.org/taxize/reference/lowest_common.md)
+  : Retrieve the lowest common taxon and rank for a given taxon name or
+  ID
+- [`resolve()`](https://docs.ropensci.org/taxize/reference/resolve.md) :
+  Resolve names from different data sources
+- [`synonyms()`](https://docs.ropensci.org/taxize/reference/synonyms.md)
+  [`synonyms_df()`](https://docs.ropensci.org/taxize/reference/synonyms.md)
+  : Retrieve synonyms from various sources given input taxonomic names
+  or identifiers
+- [`tax_name()`](https://docs.ropensci.org/taxize/reference/tax_name.md)
+  : Get taxonomic names for a given rank
+- [`tax_rank()`](https://docs.ropensci.org/taxize/reference/tax_rank.md)
+  : Get rank for a given taxonomic name.
+
+## Ping
+
+- [`col_ping()`](https://docs.ropensci.org/taxize/reference/ping.md)
+  [`eol_ping()`](https://docs.ropensci.org/taxize/reference/ping.md)
+  [`itis_ping()`](https://docs.ropensci.org/taxize/reference/ping.md)
+  [`ncbi_ping()`](https://docs.ropensci.org/taxize/reference/ping.md)
+  [`tropicos_ping()`](https://docs.ropensci.org/taxize/reference/ping.md)
+  [`nbn_ping()`](https://docs.ropensci.org/taxize/reference/ping.md)
+  [`gbif_ping()`](https://docs.ropensci.org/taxize/reference/ping.md)
+  [`bold_ping()`](https://docs.ropensci.org/taxize/reference/ping.md)
+  [`ipni_ping()`](https://docs.ropensci.org/taxize/reference/ping.md)
+  [`vascan_ping()`](https://docs.ropensci.org/taxize/reference/ping.md)
+  [`fg_ping()`](https://docs.ropensci.org/taxize/reference/ping.md) :
+  Ping an API used in taxize to see if it's working.
+- [`status_codes()`](https://docs.ropensci.org/taxize/reference/status_codes.md)
+  : Get HTTP status codes
+
+## Get taxon identifiers
+
+- [`get_id_details`](https://docs.ropensci.org/taxize/reference/get_id_details.md)
+  :
+
+  Details on `get_*()` functions
+
+- [`taxon_last()`](https://docs.ropensci.org/taxize/reference/taxon-state.md)
+  [`taxon_clear()`](https://docs.ropensci.org/taxize/reference/taxon-state.md)
+  :
+
+  Last taxon state object from a `get_*` function call
+
+- [`get_boldid()`](https://docs.ropensci.org/taxize/reference/get_boldid.md)
+  [`as.boldid()`](https://docs.ropensci.org/taxize/reference/get_boldid.md)
+  [`as.data.frame(`*`<boldid>`*`)`](https://docs.ropensci.org/taxize/reference/get_boldid.md)
+  [`get_boldid_()`](https://docs.ropensci.org/taxize/reference/get_boldid.md)
+  : Get the BOLD (Barcode of Life) code for a search term.
+
+- [`get_eolid()`](https://docs.ropensci.org/taxize/reference/get_eolid.md)
+  [`as.eolid()`](https://docs.ropensci.org/taxize/reference/get_eolid.md)
+  [`as.data.frame(`*`<eolid>`*`)`](https://docs.ropensci.org/taxize/reference/get_eolid.md)
+  [`get_eolid_()`](https://docs.ropensci.org/taxize/reference/get_eolid.md)
+  : Get the EOL ID from Encyclopedia of Life from taxonomic names.
+
+- [`get_gbifid()`](https://docs.ropensci.org/taxize/reference/get_gbifid.md)
+  [`as.gbifid()`](https://docs.ropensci.org/taxize/reference/get_gbifid.md)
+  [`as.data.frame(`*`<gbifid>`*`)`](https://docs.ropensci.org/taxize/reference/get_gbifid.md)
+  [`get_gbifid_()`](https://docs.ropensci.org/taxize/reference/get_gbifid.md)
+  : Get the GBIF backbone taxon ID from taxonomic names.
+
+- [`get_ids()`](https://docs.ropensci.org/taxize/reference/get_ids.md)
+  [`get_ids_()`](https://docs.ropensci.org/taxize/reference/get_ids.md)
+  : Retrieve taxonomic identifiers for a given taxon name.
+
+- [`get_iucn()`](https://docs.ropensci.org/taxize/reference/get_iucn.md)
+  [`as.iucn()`](https://docs.ropensci.org/taxize/reference/get_iucn.md)
+  [`as.data.frame(`*`<iucn>`*`)`](https://docs.ropensci.org/taxize/reference/get_iucn.md)
+  : Get a IUCN Redlist taxon
+
+- [`get_natservid()`](https://docs.ropensci.org/taxize/reference/get_natservid.md)
+  [`as.natservid()`](https://docs.ropensci.org/taxize/reference/get_natservid.md)
+  [`as.data.frame(`*`<natservid>`*`)`](https://docs.ropensci.org/taxize/reference/get_natservid.md)
+  [`get_natservid_()`](https://docs.ropensci.org/taxize/reference/get_natservid.md)
+  : Get NatureServe taxonomic ID for a taxon name
+
+- [`get_nbnid()`](https://docs.ropensci.org/taxize/reference/get_nbnid.md)
+  [`as.nbnid()`](https://docs.ropensci.org/taxize/reference/get_nbnid.md)
+  [`as.data.frame(`*`<nbnid>`*`)`](https://docs.ropensci.org/taxize/reference/get_nbnid.md)
+  [`get_nbnid_()`](https://docs.ropensci.org/taxize/reference/get_nbnid.md)
+  : Get the UK National Biodiversity Network ID from taxonomic names.
+
+- [`get_pow()`](https://docs.ropensci.org/taxize/reference/get_pow.md)
+  [`as.pow()`](https://docs.ropensci.org/taxize/reference/get_pow.md)
+  [`as.data.frame(`*`<pow>`*`)`](https://docs.ropensci.org/taxize/reference/get_pow.md)
+  [`get_pow_()`](https://docs.ropensci.org/taxize/reference/get_pow.md)
+  : Get Kew's Plants of the World code for a taxon
+
+- [`get_tolid()`](https://docs.ropensci.org/taxize/reference/get_tolid.md)
+  [`as.tolid()`](https://docs.ropensci.org/taxize/reference/get_tolid.md)
+  [`as.data.frame(`*`<tolid>`*`)`](https://docs.ropensci.org/taxize/reference/get_tolid.md)
+  [`get_tolid_()`](https://docs.ropensci.org/taxize/reference/get_tolid.md)
+  : Get the OTT id for a search term
+
+- [`get_tpsid()`](https://docs.ropensci.org/taxize/reference/get_tpsid.md)
+  [`as.tpsid()`](https://docs.ropensci.org/taxize/reference/get_tpsid.md)
+  [`as.data.frame(`*`<tpsid>`*`)`](https://docs.ropensci.org/taxize/reference/get_tpsid.md)
+  [`get_tpsid_()`](https://docs.ropensci.org/taxize/reference/get_tpsid.md)
+  : Get the NameID codes from Tropicos for taxonomic names.
+
+- [`get_tsn()`](https://docs.ropensci.org/taxize/reference/get_tsn.md)
+  [`as.tsn()`](https://docs.ropensci.org/taxize/reference/get_tsn.md)
+  [`as.data.frame(`*`<tsn>`*`)`](https://docs.ropensci.org/taxize/reference/get_tsn.md)
+  [`get_tsn_()`](https://docs.ropensci.org/taxize/reference/get_tsn.md)
+  : Get the TSN code for a search term.
+
+- [`get_uid()`](https://docs.ropensci.org/taxize/reference/get_uid.md)
+  [`as.uid()`](https://docs.ropensci.org/taxize/reference/get_uid.md)
+  [`as.data.frame(`*`<uid>`*`)`](https://docs.ropensci.org/taxize/reference/get_uid.md)
+  [`get_uid_()`](https://docs.ropensci.org/taxize/reference/get_uid.md)
+  : Get the UID codes from NCBI for taxonomic names.
+
+- [`get_wiki()`](https://docs.ropensci.org/taxize/reference/get_wiki.md)
+  [`as.wiki()`](https://docs.ropensci.org/taxize/reference/get_wiki.md)
+  [`as.data.frame(`*`<wiki>`*`)`](https://docs.ropensci.org/taxize/reference/get_wiki.md)
+  [`get_wiki_()`](https://docs.ropensci.org/taxize/reference/get_wiki.md)
+  : Get the page name for a Wiki taxon
+
+- [`get_wormsid()`](https://docs.ropensci.org/taxize/reference/get_wormsid.md)
+  [`as.wormsid()`](https://docs.ropensci.org/taxize/reference/get_wormsid.md)
+  [`as.data.frame(`*`<wormsid>`*`)`](https://docs.ropensci.org/taxize/reference/get_wormsid.md)
+  [`get_wormsid_()`](https://docs.ropensci.org/taxize/reference/get_wormsid.md)
+  : Get Worms ID for a taxon name
+
+## Datasets
+
+- [`apg_families`](https://docs.ropensci.org/taxize/reference/apg_families.md)
+  : MOBOT family names
+- [`apg_orders`](https://docs.ropensci.org/taxize/reference/apg_orders.md)
+  : MOBOT order names
+- [`plantGenusNames`](https://docs.ropensci.org/taxize/reference/plantGenusNames.md)
+  : Vector of plant genus names from ThePlantList
+- [`plantNames`](https://docs.ropensci.org/taxize/reference/plantNames.md)
+  : Vector of plant species (genus - specific epithet) names from
+  ThePlantList
+- [`rank_ref`](https://docs.ropensci.org/taxize/reference/rank_ref.md) :
+  Lookup-table for IDs of taxonomic ranks
+- [`rank_ref_zoo`](https://docs.ropensci.org/taxize/reference/rank_ref_zoo.md)
+  : Lookup-table for IDs of taxonomic ranks (WoRMS)
+- [`worrms_ranks`](https://docs.ropensci.org/taxize/reference/worrms_ranks.md)
+  : WORMS ranks
+- [`species_plantarum_binomials`](https://docs.ropensci.org/taxize/reference/species_plantarum_binomials.md)
+  : Species names from Species Plantarum
+- [`theplantlist`](https://docs.ropensci.org/taxize/reference/theplantlist.md)
+  : Lookup-table for family, genus, and species names for ThePlantList
+
+## Random names
+
+- [`names_list()`](https://docs.ropensci.org/taxize/reference/names_list.md)
+  : Get a random vector of species names.
+
+## Name Resolution Services
+
+- [`gni_details()`](https://docs.ropensci.org/taxize/reference/gni_details.md)
+  : Search for taxonomic name details using the Global Names Index
+- [`gnr_datasources()`](https://docs.ropensci.org/taxize/reference/gnr_datasources.md)
+  : Global Names Resolver Data Sources
+- [`gnr_resolve()`](https://docs.ropensci.org/taxize/reference/gnr_resolve.md)
+  : Resolve names using Global Names Resolver
+- [`iplant_resolve()`](https://docs.ropensci.org/taxize/reference/iplant_resolve.md)
+  : iPlant name resolution
+- [`tol_resolve()`](https://docs.ropensci.org/taxize/reference/tol_resolve.md)
+  : Resolve names using Open Tree of Life (OTL) resolver
+- [`gna_search()`](https://docs.ropensci.org/taxize/reference/gna_search.md)
+  : Search for taxonomic names using the Global Names Architecture
+- [`gna_data_sources()`](https://docs.ropensci.org/taxize/reference/gna_data_sources.md)
+  : Get metadata about GNA data sources
+
+## Name Parsers
+
+- [`gni_parse()`](https://docs.ropensci.org/taxize/reference/gni_parse.md)
+  : Parse scientific names using EOL's name parser.
+- [`gbif_parse()`](https://docs.ropensci.org/taxize/reference/gbif_parse.md)
+  : Parse taxon names using the GBIF name parser.
+- [`gna_verifier()`](https://docs.ropensci.org/taxize/reference/gna_verifier.md)
+  : Verify a list of scientific names against biodiversity data-sources.
+- [`gna_parse()`](https://docs.ropensci.org/taxize/reference/gna_parse.md)
+  : Parse scientific names using Global Names Parser
+
+## NCBI Taxonomy
+
+- [`ncbi_children()`](https://docs.ropensci.org/taxize/reference/ncbi_children.md)
+  : Search NCBI for children of a taxon
+- [`ncbi_downstream()`](https://docs.ropensci.org/taxize/reference/ncbi_downstream.md)
+  : Retrieve all taxa names downstream in hierarchy for NCBI
+- [`ncbi_get_taxon_summary()`](https://docs.ropensci.org/taxize/reference/ncbi_get_taxon_summary.md)
+  : NCBI taxon information from uids
+- [`genbank2uid()`](https://docs.ropensci.org/taxize/reference/genbank2uid.md)
+  : Get NCBI taxonomy UID from GenBankID
+
+## Catalogue of Life
+
+## Global Biodiversity Information Facility
+
+- [`gbif_downstream()`](https://docs.ropensci.org/taxize/reference/gbif_downstream.md)
+  : Retrieve all taxonomic names downstream in hierarchy for GBIF
+- [`gbif_name_usage()`](https://docs.ropensci.org/taxize/reference/gbif_name_usage.md)
+  : Lookup details for specific names in all taxonomies in GBIF.
+- [`gbif_parse()`](https://docs.ropensci.org/taxize/reference/gbif_parse.md)
+  : Parse taxon names using the GBIF name parser.
+- [`scrapenames()`](https://docs.ropensci.org/taxize/reference/scrapenames.md)
+  : Find taxon names using Global Names Recognition and Discovery
+
+## Encyclopedia of Life
+
+- [`eol_dataobjects()`](https://docs.ropensci.org/taxize/reference/eol_dataobjects.md)
+  : Given the identifier for a data object, return all metadata about
+  the object
+- [`eol_pages()`](https://docs.ropensci.org/taxize/reference/eol_pages.md)
+  : Search for pages in EOL database using a taxonconceptID.
+- [`eol_search()`](https://docs.ropensci.org/taxize/reference/eol_search.md)
+  : Search for terms in EOL database.
+
+## EUBON
+
+- [`eubon_capabilities()`](https://docs.ropensci.org/taxize/reference/eubon_capabilities.md)
+  : EUBON capabilities
+- [`eubon_children()`](https://docs.ropensci.org/taxize/reference/eubon_children.md)
+  : EUBON children
+- [`eubon_hierarchy()`](https://docs.ropensci.org/taxize/reference/eubon_hierarchy.md)
+  : EUBON hierarchy
+- [`eubon_search()`](https://docs.ropensci.org/taxize/reference/eubon_search.md)
+  : EUBON taxonomy search
+
+## Index Fungorum
+
+- [`fg_name_search()`](https://docs.ropensci.org/taxize/reference/fungorum.md)
+  [`fg_author_search()`](https://docs.ropensci.org/taxize/reference/fungorum.md)
+  [`fg_epithet_search()`](https://docs.ropensci.org/taxize/reference/fungorum.md)
+  [`fg_name_by_key()`](https://docs.ropensci.org/taxize/reference/fungorum.md)
+  [`fg_name_full_by_lsid()`](https://docs.ropensci.org/taxize/reference/fungorum.md)
+  [`fg_all_updated_names()`](https://docs.ropensci.org/taxize/reference/fungorum.md)
+  [`fg_deprecated_names()`](https://docs.ropensci.org/taxize/reference/fungorum.md)
+  : Index Fungorum
+
+## Integrated Taxonomic Information Service
+
+- [`itis_acceptname()`](https://docs.ropensci.org/taxize/reference/itis_acceptname.md)
+  : Retrieve accepted TSN and name
+- [`itis_downstream()`](https://docs.ropensci.org/taxize/reference/itis_downstream.md)
+  : Retrieve all taxa names or TSNs downstream in hierarchy from given
+  TSN.
+- [`itis_getrecord()`](https://docs.ropensci.org/taxize/reference/itis_getrecord.md)
+  : Get full ITIS record for one or more ITIS TSN's or lsid's.
+- [`itis_hierarchy()`](https://docs.ropensci.org/taxize/reference/itis_hierarchy.md)
+  : ITIS hierarchy
+- [`itis_kingdomnames()`](https://docs.ropensci.org/taxize/reference/itis_kingdomnames.md)
+  : Get kingdom names
+- [`itis_lsid()`](https://docs.ropensci.org/taxize/reference/itis_lsid.md)
+  : Get TSN from LSID
+- [`itis_name()`](https://docs.ropensci.org/taxize/reference/itis_name-deprecated.md)
+  : Get taxonomic names for a given taxonomic name query.
+- [`itis_native()`](https://docs.ropensci.org/taxize/reference/itis_native.md)
+  : Get jurisdiction data, i.e., native or not native in a region.
+- [`itis_refs()`](https://docs.ropensci.org/taxize/reference/itis_refs.md)
+  : Get references related to a ITIS TSN.
+- [`itis_taxrank()`](https://docs.ropensci.org/taxize/reference/itis_taxrank.md)
+  : Retrieve taxonomic rank name from given TSN.
+- [`itis_terms()`](https://docs.ropensci.org/taxize/reference/itis_terms.md)
+  : Get ITIS terms, i.e., tsn's, authors, common names, and scientific
+  names.
+
+## UK National Biodiversity Network
+
+- [`nbn_classification()`](https://docs.ropensci.org/taxize/reference/nbn_classification.md)
+  : Search UK National Biodiversity Network database for taxonomic
+  classification
+- [`nbn_search()`](https://docs.ropensci.org/taxize/reference/nbn_search.md)
+  : Search UK National Biodiversity Network
+- [`nbn_synonyms()`](https://docs.ropensci.org/taxize/reference/nbn_synonyms.md)
+  : Return all synonyms for a taxon name with a given id from NBN
+
+## Tropicos
+
+- [`tp_accnames()`](https://docs.ropensci.org/taxize/reference/tp_accnames.md)
+  : Return all accepted names for a taxon name with a given id.
+- [`tp_dist()`](https://docs.ropensci.org/taxize/reference/tp_dist.md) :
+  Return all distribution records for for a taxon name with a given id.
+- [`tp_refs()`](https://docs.ropensci.org/taxize/reference/tp_refs.md) :
+  Return all reference records for for a taxon name with a given id.
+- [`tp_search()`](https://docs.ropensci.org/taxize/reference/tp_search.md)
+  : Search Tropicos by scientific name, common name, or Tropicos ID.
+- [`tp_summary()`](https://docs.ropensci.org/taxize/reference/tp_summary.md)
+  : Return summary data a taxon name with a given id.
+- [`tp_synonyms()`](https://docs.ropensci.org/taxize/reference/tp_synonyms.md)
+  : Return all synonyms for a taxon name with a given id.
+
+## The Plant List
+
+- [`tpl_families()`](https://docs.ropensci.org/taxize/reference/tpl_families.md)
+  : Get The Plant List families.
+- [`tpl_get()`](https://docs.ropensci.org/taxize/reference/tpl_get.md) :
+  Get The Plant List csv files.
+- [`tpl_search()`](https://docs.ropensci.org/taxize/reference/tpl_search-defunct.md)
+  : A light wrapper around the taxonstand fxn to call Theplantlist.org
+  database.
+
+## Kew’s Plants of the World
+
+- [`pow_lookup()`](https://docs.ropensci.org/taxize/reference/pow_lookup.md)
+  : Lookup taxa in Kew's Plants of the World
+- [`pow_search()`](https://docs.ropensci.org/taxize/reference/pow_search.md)
+  : Search Kew's Plants of the World
+- [`pow_synonyms()`](https://docs.ropensci.org/taxize/reference/pow_synonyms.md)
+  : Lookup synonyms in Kew's Plants of the World
+
+## IUCN
+
+- [`iucn_getname()`](https://docs.ropensci.org/taxize/reference/iucn_getname.md)
+  : Get any matching IUCN species names
+
+- [`iucn_id()`](https://docs.ropensci.org/taxize/reference/iucn_id.md) :
+  Get an ID for a IUCN listed taxon
+
+- [`iucn_status()`](https://docs.ropensci.org/taxize/reference/iucn_status.md)
+  :
+
+  Extractor functions for `iucn`-class.
+
+- [`iucn_summary()`](https://docs.ropensci.org/taxize/reference/iucn_summary.md)
+  : Get a summary from the IUCN Red List
+
+## Angiosperm Phylogeny Group
+
+- [`apgOrders()`](https://docs.ropensci.org/taxize/reference/apg.md)
+  [`apgFamilies()`](https://docs.ropensci.org/taxize/reference/apg.md) :
+  Get APG names
+- [`apg_families`](https://docs.ropensci.org/taxize/reference/apg_families.md)
+  : MOBOT family names
+- [`apg_lookup()`](https://docs.ropensci.org/taxize/reference/apg_lookup.md)
+  : Lookup in the APGIII taxonomy and replace family names
+- [`apg_orders`](https://docs.ropensci.org/taxize/reference/apg_orders.md)
+  : MOBOT order names
+
+## Other data sources
+
+- [`bold_search()`](https://docs.ropensci.org/taxize/reference/bold_search.md)
+  : Search Barcode of Life for taxonomic IDs
+- [`bold_downstream()`](https://docs.ropensci.org/taxize/reference/bold_downstream.md)
+  : Retrieve all taxa names downstream in hierarchy for BOLD
+- [`ion()`](https://docs.ropensci.org/taxize/reference/ion.md) : ION -
+  Index to Organism Names
+- [`ipni_search()`](https://docs.ropensci.org/taxize/reference/ipni_search.md)
+  : Search for names in the International Plant Names Index (IPNI).
+- [`plantminer()`](https://docs.ropensci.org/taxize/reference/plantminer.md)
+  : Search for taxonomy data from Plantminer.com
+- [`vascan_search()`](https://docs.ropensci.org/taxize/reference/vascan_search.md)
+  : Search the CANADENSYS Vascan API.
+- [`worms_downstream()`](https://docs.ropensci.org/taxize/reference/worms_downstream.md)
+  : Retrieve all taxa names downstream in hierarchy for WORMS
+
+## Utilities
+
+- [`class2tree()`](https://docs.ropensci.org/taxize/reference/class2tree.md)
+  [`plot(`*`<classtree>`*`)`](https://docs.ropensci.org/taxize/reference/class2tree.md)
+  [`print(`*`<classtree>`*`)`](https://docs.ropensci.org/taxize/reference/class2tree.md)
+  : Convert a list of classifications to a tree.
+- [`rankagg()`](https://docs.ropensci.org/taxize/reference/rankagg.md) :
+  Aggregate data by given taxonomic rank
+- [`tax_agg()`](https://docs.ropensci.org/taxize/reference/tax_agg.md)
+  [`print(`*`<tax_agg>`*`)`](https://docs.ropensci.org/taxize/reference/tax_agg.md)
+  : Aggregate species data to given taxonomic rank
+- [`taxize_capwords()`](https://docs.ropensci.org/taxize/reference/taxize_capwords.md)
+  : Capitalize the first letter of a character string.
+
+## Defunct methods
+
+- [`taxize-defunct`](https://docs.ropensci.org/taxize/reference/taxize-defunct.md)
+  [`defunct`](https://docs.ropensci.org/taxize/reference/taxize-defunct.md)
+  : Defunct functions in taxize
+- [`ubio_ping()`](https://docs.ropensci.org/taxize/reference/ubio_ping-defunct.md)
+  : uBio ping
+- [`tnrs()`](https://docs.ropensci.org/taxize/reference/tnrs-defunct.md)
+  : Phylotastic Taxonomic Name Resolution Service.
+- [`tnrs_sources()`](https://docs.ropensci.org/taxize/reference/tnrs_sources-defunct.md)
+  : TNRS sources
+
+# Articles
+
+### All vignettes
+
+- [Case study - resolving Species Plantarum
+  names](https://docs.ropensci.org/taxize/articles/case_study.md):
+- [taxize data
+  sources](https://docs.ropensci.org/taxize/articles/datasources.md):
+- [Key functions in
+  taxize](https://docs.ropensci.org/taxize/articles/infotable.md):
+- [Strategies for programmatic name
+  cleaning](https://docs.ropensci.org/taxize/articles/name_cleaning.md):
+- [Introduction to
+  taxize](https://docs.ropensci.org/taxize/articles/taxize.md):
+- [taxonomic
+  ranks](https://docs.ropensci.org/taxize/articles/taxonomic_ranks.md):
