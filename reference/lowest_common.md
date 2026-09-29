@@ -1,0 +1,165 @@
+# Retrieve the lowest common taxon and rank for a given taxon name or ID
+
+Retrieve the lowest common taxon and rank for a given taxon name or ID
+
+## Usage
+
+``` r
+lowest_common(...)
+
+# Default S3 method
+lowest_common(
+  sci_id,
+  db = NULL,
+  rows = NA,
+  class_list = NULL,
+  low_rank = NULL,
+  x = NULL,
+  ...
+)
+
+# S3 method for class 'uid'
+lowest_common(sci_id, class_list = NULL, low_rank = NULL, ...)
+
+# S3 method for class 'tsn'
+lowest_common(sci_id, class_list = NULL, low_rank = NULL, ...)
+
+# S3 method for class 'gbifid'
+lowest_common(sci_id, class_list = NULL, low_rank = NULL, ...)
+
+# S3 method for class 'tolid'
+lowest_common(sci_id, class_list = NULL, low_rank = NULL, ...)
+```
+
+## Arguments
+
+- ...:
+
+  Other arguments passed to
+  [`get_tsn()`](https://docs.ropensci.org/taxize/reference/get_tsn.md),
+  [`get_uid()`](https://docs.ropensci.org/taxize/reference/get_uid.md),
+  [`get_gbifid()`](https://docs.ropensci.org/taxize/reference/get_gbifid.md),
+  [`get_tolid()`](https://docs.ropensci.org/taxize/reference/get_tolid.md)
+
+- sci_id:
+
+  Vector of taxa names (character) or id (character or numeric) to
+  query.
+
+- db:
+
+  character; database to query. either `ncbi`, `itis`, `gbif`, `tol`. If
+  using ncbi, we recommend getting an API key; see
+  [taxize-authentication](https://docs.ropensci.org/taxize/reference/taxize-authentication.md)
+
+- rows:
+
+  (numeric) Any number from 1 to infinity. If the default NA, all rows
+  are considered. Note that this parameter is ignored if you pass in a
+  taxonomic id of any of the acceptable classes: tsn, gbifid, tolid.
+  NCBI has a method for this function but rows doesn't work.
+
+- class_list:
+
+  (list) A list of classifications, as returned from
+  [`classification()`](https://docs.ropensci.org/taxize/reference/classification.md)
+
+- low_rank:
+
+  (character) taxonomic rank to return, of length 1
+
+- x:
+
+  Deprecated, see `sci_id`
+
+## Value
+
+NA when no match, or a data.frame with columns
+
+- name
+
+- rank
+
+- id
+
+## Authentication
+
+See
+[taxize-authentication](https://docs.ropensci.org/taxize/reference/taxize-authentication.md)
+for help on authentication
+
+## Author
+
+Jimmy O'Donnell <jodonnellbio@gmail.com> Scott Chamberlain
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+id <- c("9031", "9823", "9606", "9470")
+id_class <- classification(id, db = 'ncbi')
+lowest_common(id[2:4], db = "ncbi")
+lowest_common(id[2:4], db = "ncbi", low_rank = 'class')
+lowest_common(id[2:4], db = "ncbi", low_rank = 'family')
+lowest_common(id[2:4], class_list = id_class)
+lowest_common(id[2:4], class_list = id_class, low_rank = 'class')
+lowest_common(id[2:4], class_list = id_class, low_rank = 'family')
+
+# TOL
+taxa <- c("Angraecum sesquipedale", "Dracula vampira",
+  "Masdevallia coccinea")
+(cls <- classification(taxa, db = "tol"))
+lowest_common(taxa, db = "tol", class_list = cls)
+lowest_common(get_tolid(taxa), class_list = cls)
+xx <- get_tolid(taxa)
+lowest_common(xx, class_list = cls)
+
+spp <- c("Sus scrofa", "Homo sapiens", "Nycticebus coucang")
+lowest_common(spp, db = "ncbi")
+lowest_common(get_uid(spp))
+
+lowest_common(spp, db = "itis")
+lowest_common(get_tsn(spp))
+
+gbifid <- c("2704179", "3119195")
+lowest_common(gbifid, db = "gbif")
+
+spp <- c("Poa annua", "Helianthus annuus")
+lowest_common(spp, db = "gbif")
+lowest_common(get_gbifid(spp))
+
+cool_orchid <- c("Angraecum sesquipedale", "Dracula vampira",
+  "Masdevallia coccinea")
+orchid_ncbi <- get_uid(cool_orchid)
+orchid_gbif <- get_gbifid(cool_orchid)
+
+cool_orchids2 <- c("Domingoa haematochila", "Gymnadenia conopsea",
+  "Masdevallia coccinea")
+orchid_itis <- get_tsn(cool_orchids2)
+
+orchid_hier_ncbi <- classification(orchid_ncbi, db = 'ncbi')
+orchid_hier_gbif <- classification(orchid_gbif, db = 'gbif')
+orchid_hier_itis <- classification(orchid_itis, db = 'itis')
+
+lowest_common(orchid_ncbi, low_rank = 'class')
+lowest_common(orchid_ncbi, class_list = orchid_hier_ncbi,
+  low_rank = 'class')
+lowest_common(orchid_gbif, low_rank = 'class')
+lowest_common(orchid_gbif, orchid_hier_gbif, low_rank = 'class')
+lowest_common(get_uid(cool_orchid), low_rank = 'class')
+lowest_common(get_uid(cool_orchid), low_rank = 'family')
+
+lowest_common(orchid_ncbi, class_list = orchid_hier_ncbi,
+  low_rank = 'subfamily')
+lowest_common(orchid_gbif, class_list = orchid_hier_gbif,
+  low_rank = 'subfamily')
+
+lowest_common(orchid_itis, class_list = orchid_hier_itis,
+  low_rank = 'class')
+
+## Pass in sci. names
+nms <- c("Angraecum sesquipedale", "Dracula vampira", "Masdevallia coccinea")
+lowest_common(x = nms, db = "ncbi")
+lowest_common(x = nms, db = "gbif")
+} # }
+```
